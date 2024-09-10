@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XR Hub </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    
+
+    <header>
+        <a href="#" class="brand">XR Hub</a>
+        <div class="menu-btn"></div>
+
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="#">AR</a>
+                <a href="#">VR</a>
+                <a href="#">Trends & News</a>
+                <a href="#">Guides</a>
+                <a href="#">Tech</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="home">
+        <video class="video-slide active" src="AR.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="VR.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="T&N.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="Guide.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="tech.mp4" autoplay muted loop></video>
+
+        <div class="content active">
+            <h1>Augmented<br><span>Reality</span></h1>
+            <p>Imagine your textbook coming to life, where you can explore ancient history in 3D, dissect a virtual frog, or even travel back in time with just your phone or AR glasses. That's the magic of AR in e-learning! It's like turning your world into an interactive playground of knowledge, making learning as fun as playing your favorite video game. With AR, education is an adventure waiting to happen right before your eyes!</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h2>Virtual<br><span>Reality</span></h2>
+            <p>Virtual Reality in e-learning is like stepping into a time machine, a spaceship, or even a magical kingdom without leaving your chair! It's the coolest way to learn, where you wear special goggles that transport you to amazing places and adventures. Want to explore the pyramids in Egypt, swim with dolphins, or even journey inside the human body? With VR, the classroom becomes your playground, and learning is an exciting adventure you'll never forget!</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h3>Latest Trends<br><span>and News</span></h3>
+            <p>Stay in the know with the freshest updates on AR and VR technology. Explore the latest trends, product releases, and industry news to discover the cutting-edge advancements shaping the immersive world of Augmented and Virtual Reality.</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h4>How-To <br><span>Guides</span></h4>
+            <p>Explore step-by-step instructions and expert tips on creating, experiencing, and mastering augmented and virtual reality. Whether you're a developer or a curious learner, our guides provide practical insights to help you get started and excel in the exciting realms of AR and VR.</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h5>XR <br><span>Advancements</span></h5>
+            <p>Delve deep into the intricate technical aspects of AR and VR, taking a comprehensive look at the hardware, software, and the sophisticated development tools utilized in the creation and enhancement of these immersive experiences.</p>
+            <a href="#">Read More</a>
+        </div>
+
+        <div class="media-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+        </div>
+    </section>
+
+
+    <script type="text/javascript">
+        const menuBtn = document.querySelector(".menu-btn");
+        const navigation = document.querySelector(".navigation");
+
+        menuBtn.addEventListener("click", () => {
+            menuBtn.classList.toggle("active");
+            navigation.classList.toggle("active");
+        });
+
+
+
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slide");
+        const contents = document.querySelectorAll(".content");
+
+
+        var sliderNav = function(manual){
+            btns.forEach((btn) => {
+                btn.classList.remove("active")
+            });
+
+            slides.forEach((slide) => {
+                slide.classList.remove("active")
+            });
+
+            contents.forEach((content) => {
+                content.classList.remove("active")
+            });
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+        }
+
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            });
+        });
+    </script>
+
+
+</body>
+</html>
